@@ -1,3 +1,9 @@
+from itc_common_utilities.logger.logger_setup import setup_logger
+
+# Initialize the logger
+logger = setup_logger(__name__)
+
+
 def build_audit_table_data(results):
     """
     Processes scanned DynamoDB results by extracting 'archiveReason' and 'archiveComments'
@@ -14,14 +20,23 @@ def build_audit_table_data(results):
     :param results: List of dictionaries from the DynamoDB scan.
     :return: List of processed dictionaries.
     """
+    logger.info(f"Processing {len(results)} audit records...")
+
+    # Track counts for logging
+    missing_payload_count = 0
+    processed_count = 0
+
     # Process each item to extract the additional fields from the payload.
     for item in results:
         payload = item.get('payload')
         if payload and isinstance(payload, dict):
+            processed_count += 1
+
             # Extract archiveReason.
             archive_reason = payload.get('archiveReason')
             if isinstance(archive_reason, dict) and 'S' in archive_reason:
                 archive_reason_value = archive_reason['S']
+                logger.debug(f"Extracted archive reason in DynamoDB format for record {item.get('auditRecordId')}")
             else:
                 archive_reason_value = archive_reason
             item['lastArchiveReason'] = archive_reason_value
@@ -30,13 +45,19 @@ def build_audit_table_data(results):
             archive_comments = payload.get('archiveComments')
             if isinstance(archive_comments, dict) and 'S' in archive_comments:
                 archive_comments_value = archive_comments['S']
+                logger.debug(f"Extracted archive comments in DynamoDB format for record {item.get('auditRecordId')}")
             else:
                 archive_comments_value = archive_comments
             item['lastArchiveComment'] = archive_comments_value
         else:
             # Set to None if no valid payload is present.
+            missing_payload_count += 1
             item['lastArchiveReason'] = None
             item['lastArchiveComment'] = None
+            logger.debug(f"Missing or invalid payload for record {item.get('auditRecordId')}")
+
+    logger.info(
+        f"Processed {processed_count} records with valid payloads. Found {missing_payload_count} records with missing/invalid payloads.")
 
     # Build the final dataset.
     final_dataset = []
@@ -51,5 +72,5 @@ def build_audit_table_data(results):
         }
         final_dataset.append(final_record)
 
-    print("Final dataset prepared with", len(final_dataset), "records.")
+    logger.info(f"Final audit dataset prepared with {len(final_dataset)} records.")
     return final_dataset
