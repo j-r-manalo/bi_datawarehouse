@@ -1,0 +1,23 @@
+[project]
+name = "demand-pipeline"
+version = "0.1.0"
+description = "extract data from dynamodb which will later be used to create demand upload and archived tables"
+authors = [
+    {name = "j-r-manalo",email = "107952732+j-r-manalo@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "boto3 (>=1.36.13,<2.0.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "pandas (>=2.2.3,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "pytest (>=8.3.4,<9.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

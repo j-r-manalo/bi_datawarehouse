@@ -1,0 +1,24 @@
+[project]
+name = "verifyplus-pipeline"
+version = "0.1.0"
+description = "extract data from verifyplus and upload to data warehouse"
+authors = [
+    {name = "j-r-manalo",email = "107952732+j-r-manalo@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "pandas (>=2.2.3,<3.0.0)",
+    "requests (>=2.32.3,<3.0.0)",
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "boto3 (>=1.36.23,<2.0.0)",
+    "pytest (>=8.3.4,<9.0.0)"
+]
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"

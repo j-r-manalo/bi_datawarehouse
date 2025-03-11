@@ -1,0 +1,22 @@
+[project]
+name = "orchestrator"
+version = "0.1.0"
+description = "Orchestrate the pipelines for the ITC."
+authors = [
+    {name = "j-r-manalo",email = "107952732+j-r-manalo@users.noreply.github.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "python-dotenv (>=1.0.1,<2.0.0)",
+    "psycopg2 (>=2.9.10,<3.0.0)",
+    "boto3 (>=1.36.26,<2.0.0)"
+]
+
+
+[tool.poetry]
+package-mode = false
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
