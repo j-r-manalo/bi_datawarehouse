@@ -43,125 +43,109 @@ The BI platform architecture is designed for efficiency, scalability, and securi
 *   **Programming Languages:** Python, HCL (Terraform)
 
 ## Repository Structure
+Here's the directory structure with comments aligned in the same column:
+
 ```bash
 .
-├── README.md
-├── directory_structure.txt
-├── terraform
-│         └── itc-beta
-│             ├── README.md
-│             ├── main.tf
-│             ├── terraform.tfvars
-│             └── variables.tf
-└── terraform_modules
-    ├── __init__.py
-    ├── common
-    │         ├── dist
-    │         │         ├── itc_common_utilities-0.1.1-py3-none-any.whl
-    │         │         └── itc_common_utilities-0.1.1.tar.gz
-    │         └── itc_common_utilities
-    │             ├── __pycache__
-    │             │         └── __init__.cpython-313.pyc
-    │             └── logger
-    │                 └── __pycache__
-    ├── demand_pipeline
-    │         ├── README.md
-    │         ├── __init__.py
-    │         ├── demand_pipeline_lambda.tf
-    │         ├── directory_structure.txt
-    │         ├── lambdas
-    │         │         ├── __pycache__
-    │         │         ├── demand_pipeline
-    │         │         │         ├── README.md
-    │         │         │         ├── __init__.py
-    │         │         │         ├── __pycache__
-    │         │         │         ├── builders
-    │         │         │         ├── main.py
-    │         │         │         ├── poetry.lock
-    │         │         │         ├── pyproject.toml
-    │         │         │         ├── requirements.txt
-    │         │         │         ├── tests
-    │         │         │         └── utils.py
-    │         │         └── demand_pipeline.zip
-    │         ├── layers
-    │         │         └── python
-    │         │             └── Dockerfile
-    │         ├── outputs.tf
-    │         └── variables.tf
-    ├── demand_pipeline_schedule
-    │         ├── README.md
-    │         ├── demand_pipeline_schedule.tf
-    │         ├── outputs.tf
-    │         └── variables.tf
-    ├── itc_data_warehouse
-    │         ├── README.md
-    │         ├── itc_rds.tf
-    │         ├── outputs.tf
-    │         ├── sql_scripts
-    │         │         ├── 01_create_schemas.sql
-    │         │         ├── 02_create_verifyplus_table.sql
-    │         │         ├── 03_create_raw_cases_table.sql
-    │         │         ├── 04_create_raw_metadata_table.sql
-    │         │         ├── 05_create_raw_templates_table.sql
-    │         │         ├── 06_create_raw_audits_table.sql
-    │         │         ├── 07_create_demands_archived_view.sql
-    │         │         ├── 08_create_demands_uploaded_view.sql
-    │         │         ├── 09_create_verifyplus_view.sql
-    │         │         ├── 10_create_demands_summary_view.sql
-    │         │         ├── 11_create_roles.sql
-    │         │         ├── 13_grant_usage.sql
-    │         │         ├── 14_refresh_materialized_views.sql
-    │         │         ├── combine_sql_files.py
-    │         │         └── combined.sql
-    │         └── variables.tf
-    ├── itc_vpc
-    │         ├── README.md
-    │         ├── itc_vpc.tf
-    │         ├── outputs.tf
-    │         └── variables.tf
-    ├── orchestrator
-    │         ├── README.md
-    │         ├── lambdas
-    │         │         ├── orchestrator
-    │         │         │         ├── README.md
-    │         │         │         ├── main.py
-    │         │         │         ├── poetry.lock
-    │         │         │         ├── pyproject.toml
-    │         │         │         └── requirements.txt
-    │         │         └── orchestrator.zip
-    │         ├── layers
-    │         │         └── python
-    │         │             └── Dockerfile
-    │         ├── orchestrator.tf
-    │         └── variables.tf
-    ├── verifyplus_pipeline
-    │         ├── README.md
-    │         ├── __pycache__
-    │         ├── lambdas
-    │         │         ├── __pycache__
-    │         │         ├── verifyplus_pipeline
-    │         │         │         ├── README.md
-    │         │         │         ├── __pycache__
-    │         │         │         ├── api_handler.py
-    │         │         │         ├── database_handler.py
-    │         │         │         ├── main.py
-    │         │         │         ├── poetry.lock
-    │         │         │         ├── pyproject.toml
-    │         │         │         ├── tests
-    │         │         │         └── utils.py
-    │         │         └── verifyplus_pipeline.zip
-    │         ├── layers
-    │         │         └── python
-    │         │             ├── Dockerfile
-    │         │             └── verifyplus_layer.zip
-    │         ├── outputs.tf
-    │         ├── variables.tf
-    │         └── verifyplus_pipeline_lambda.tf
-    └── verifyplus_pipeline_schedule
-        ├── README.md
-        ├── variables.tf
-        └── verifyplus_pipeline_schedule.tf
-
+├── README.md                                      # Main documentation for the project
+├── terraform                                      # IaC configuration directory
+│         └── itc-beta                             # Beta environment configuration
+│             ├── README.md                        # Beta environment documentation
+│             ├── main.tf                          # Primary Terraform configuration
+│             └── variables.tf                     # Input variables for beta environment
+└── terraform_modules                              # Reusable Terraform modules
+    ├── __init__.py                                # Python package initialization
+    ├── common                                     # Shared utilities and resources
+    │         ├── dist                             # Distribution files for common utilities
+    │         └── itc_common_utilities             # Common utility package
+    │             ├── __init__.py                  # Package initialization
+    │             └── logger                       # Logging functionality
+    │                 ├── __init__.py              # Logger package initialization
+    │                 └── logger_setup.py          # Logging configuration
+    ├── demand_pipeline                            # Demand processing pipeline module
+    │         ├── README.md                        # Demand pipeline documentation
+    │         ├── __init__.py                      # Package initialization
+    │         ├── demand_pipeline_lambda.tf        # Lambda function configuration
+    │         ├── lambdas                          # Lambda function implementations
+    │         │         └── demand_pipeline        # Main demand pipeline function
+    │         │                   ├── README.md    # Documentation for the lambda
+    │         │                   ├── __init__.py  # Package initialization
+    │         │                   ├── builders     # Component builders for the pipeline
+    │         │                   │         ├── __init__.py           # Package initialization
+    │         │                   │         ├── audit_builder.py      # Audit component builder
+    │         │                   │         ├── case_builder.py       # Case component builder
+    │         │                   │         ├── metadata_builder.py   # Metadata component builder
+    │         │                   │         └── templates_builder.py  # Templates component builder
+    │         │                   ├── main.py      # Lambda entry point
+    │         │                   ├── poetry.lock  # Dependency lock file
+    │         │                   ├── pyproject.toml # Project configuration
+    │         │                   ├── tests        # Unit tests directory
+    │         │                   │         └── test_main.py  # Main function tests
+    │         │                   └── utils.py     # Utility functions
+    │         ├── layers                           # Lambda layer resources
+    │         │         └── python                 # Python dependencies
+    │         │             └── Dockerfile         # Container for layer building
+    │         ├── outputs.tf                       # Output variables
+    │         └── variables.tf                     # Input variables
+    ├── itc_data_warehouse                         # Data warehouse module
+    │         ├── README.md                        # Data warehouse documentation
+    │         ├── itc_rds.tf                       # RDS database configuration
+    │         ├── outputs.tf                       # Output variables
+    │         ├── sql_scripts                      # Database initialization scripts
+    │         │         ├── 01_create_schemas.sql         # Schema creation script
+    │         │         ├── 02_create_verifyplus_table.sql # VerifyPlus table definition
+    │         │         ├── 03_create_raw_cases_table.sql  # Cases table definition
+    │         │         ├── 04_create_raw_metadata_table.sql # Metadata table definition
+    │         │         ├── 05_create_raw_templates_table.sql # Templates table definition
+    │         │         ├── 06_create_raw_audits_table.sql   # Audits table definition
+    │         │         ├── 07_create_demands_archived_view.sql # Archived demands view
+    │         │         ├── 08_create_demands_uploaded_view.sql # Uploaded demands view
+    │         │         ├── 09_create_verifyplus_view.sql      # VerifyPlus view
+    │         │         ├── 10_create_demands_summary_view.sql # Summary view
+    │         │         ├── 11_create_roles.sql                # Database roles
+    │         │         ├── 13_grant_usage.sql                 # Permission grants
+    │         │         ├── 14_refresh_materialized_views.sql  # View refresh script
+    │         │         ├── combine_sql_files.py               # Script to merge SQL files
+    │         │         └── combined.sql                       # Combined SQL script
+    │         └── variables.tf                     # Input variables
+    ├── itc_vpc                                    # VPC network configuration
+    │         ├── README.md                        # VPC documentation
+    │         ├── itc_vpc.tf                       # VPC resources definition
+    │         ├── outputs.tf                       # Output variables
+    │         └── variables.tf                     # Input variables
+    ├── orchestrator                               # Workflow orchestration module
+    │         ├── README.md                        # Orchestrator documentation
+    │         ├── lambdas                          # Lambda function implementations
+    │         │         └── orchestrator           # Main orchestrator function
+    │         │                   ├── README.md    # Documentation for the lambda
+    │         │                   ├── main.py      # Lambda entry point
+    │         │                   ├── poetry.lock  # Dependency lock file
+    │         │                   └── pyproject.toml # Project configuration
+    │         ├── layers                           # Lambda layer resources
+    │         │         └── python                 # Python dependencies
+    │         │             └── Dockerfile         # Container for layer building
+    │         ├── orchestrator.tf                  # Orchestrator configuration
+    │         └── variables.tf                     # Input variables
+    └── verifyplus_pipeline                        # VerifyPlus processing pipeline
+        ├── README.md                              # VerifyPlus pipeline documentation
+        ├── lambdas                                # Lambda function implementations
+        │         └── verifyplus_pipeline          # Main VerifyPlus pipeline function
+        │                   ├── README.md          # Documentation for the lambda
+        │                   ├── api_handler.py     # API integration handler
+        │                   ├── database_handler.py # Database operations handler
+        │                   ├── main.py            # Lambda entry point
+        │                   ├── poetry.lock        # Dependency lock file
+        │                   ├── pyproject.toml     # Project configuration
+        │                   ├── tests              # Unit tests directory
+        │                   │         ├── test_database_handler.py # Database handler tests
+        │                   │         └── test_main.py            # Main function tests
+        │                   └── utils.py           # Utility functions
+        ├── layers                                 # Lambda layer resources
+        │         └── python                       # Python dependencies
+        │             └── Dockerfile               # Container for layer building
+        ├── outputs.tf                             # Output variables
+        ├── variables.tf                           # Input variables
+        └── verifyplus_pipeline_lambda.tf          # Lambda function configuration
 ```
 ## Data Governance and Security
 
