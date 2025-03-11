@@ -1,6 +1,6 @@
 # Efficiency-Driven Data Warehouse for Business Intelligence (BI) Platform
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)  [![Portfolio Page](https://img.shields.io/badge/Portfolio-Project%20Page-brightgreen)]([Link to your Portfolio Page Here])
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)  [![Portfolio Page](https://img.shields.io/badge/Portfolio-Project%20Page-brightgreen)](https://j-r-manalo.github.io/portfolio/bidatawarehouse/)
 
 ## Overview
 
@@ -17,12 +17,9 @@ This repository showcases the implementation of:
 *   **Comprehensive Logging and Monitoring:**  Centralized logging and monitoring implemented using AWS CloudWatch Logs for data pipelines and the data warehouse, providing audit trails and enabling proactive issue detection.
 *   **Prepared Real-time Monitoring and Alerting Framework:**  Design and infrastructure setup for real-time dashboards and automated alerts (ready for client-side implementation).
 
-**For a high-level overview and project context, please visit the [Project Portfolio Page]([Link to your Portfolio Page Here]).**
+**For a high-level overview and project context, please visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bidatawarehouse/).**
 
 ## Architecture
-
-[**Link to your Portfolio Page's Architecture Diagram Here - if you are hosting the diagram separately, e.g., in your repo's `docs/` folder, link to it here, or link back to your portfolio page if the diagram is embedded there.**]
-
 The BI platform architecture is designed for efficiency, scalability, and security, leveraging AWS cloud services.  Key architectural components include:
 
 *   **Data Ingestion:** AWS Lambda functions triggered by S3 events, automating data extraction from external APIs.
@@ -41,11 +38,15 @@ The BI platform architecture is designed for efficiency, scalability, and securi
 *   **Data Pipelines / ETL:** AWS Lambda, Python
 *   **Workflow Orchestration:** AWS Step Functions
 *   **Infrastructure-as-Code:** Terraform
+*   **CI/CD:** GitHub Actions
 *   **Logging and Monitoring:** AWS CloudWatch Logs
 *   **Programming Languages:** Python, HCL (Terraform)
 
 ## Repository Structure
+```bash
 
+
+```
 ## Data Governance and Security
 
 Adherence to **HIPAA and SOC regulations** was a primary consideration.  The project incorporates the following key data governance and security measures:
@@ -69,26 +70,16 @@ To explore this project:
 1.  **Browse the Repository:**  Review the code in the `data_pipelines/` and `infrastructure/` directories to examine the implementation details of the data pipelines and infrastructure-as-code configurations.
 2.  **Review Terraform Configuration:**  Examine the Terraform files in the `infrastructure/` directory to understand how the AWS infrastructure was provisioned and configured.
 3.  **Examine Python Code:**  Explore the Python scripts in the `data_pipelines/` directory to review the data ingestion, ETL logic, and database interactions.
-4.  **Refer to Portfolio Page:** Visit the [Project Portfolio Page]([Link to your Portfolio Page Here]) for a high-level project overview, architecture diagram, and summary of key outcomes.
-
-**(Optional: If there are any very basic setup steps to *run* parts of the code locally - if feasible for a portfolio demo -  add very simple, high-level instructions here. If it's complex to run or not really intended to be run by viewers, you can omit a "Running Locally" section and just focus on code review.)**
-
-## License
-
-This project is licensed under the [MIT License](LICENSE).
-
-## Author
-
-[Your Name] - [Link to your LinkedIn Profile or Portfolio Website (optional)]
+4.  **Refer to Portfolio Page:** Visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bidatawarehouse/) for a high-level project overview, architecture diagram, and summary of key outcomes.
 
 ---
+## License
 
-**Remember to:**
+This project is licensed under the [MIT License](https://mit-license.org/).
 
-*   **Replace bracketed placeholders** like `[Link to your Portfolio Page Here]`, `[Link to your Portfolio Page's Architecture Diagram Here]`, and `[Your Name] - [Link to your LinkedIn Profile or Portfolio Website (optional)]` with your actual links and information.
-*   **Adjust the Repository Structure section** to accurately reflect your actual folder organization in your GitHub repository.
-*   **Create a LICENSE file** (e.g., MIT License) in your repository root if you want to include a license. You can use a standard MIT License template.
-*   **Consider adding a `docs/` folder** to your repository and placing your architecture diagram image file there, then link to it in the README.md.
-*   **Upload your code to GitHub!**
+---
+## Author
 
-This README.md should provide a comprehensive and professional introduction to your project for anyone visiting your GitHub repository. Let me know if you have any other adjustments or refinements!
+Jonathan R. Manalo - [Portfolio](https://j-r-manalo.github.io/)
+
+---
