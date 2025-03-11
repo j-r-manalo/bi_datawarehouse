@@ -170,9 +170,9 @@ While full real-time dashboards and alerts were prepared for future client deplo
 
 To explore this project:
 
-1.  **Browse the Repository:**  Review the code in the `data_pipelines/` and `infrastructure/` directories to examine the implementation details of the data pipelines and infrastructure-as-code configurations.
-2.  **Review Terraform Configuration:**  Examine the Terraform files in the `infrastructure/` directory to understand how the AWS infrastructure was provisioned and configured.
-3.  **Examine Python Code:**  Explore the Python scripts in the `data_pipelines/` directory to review the data ingestion, ETL logic, and database interactions.
+1.  **Browse the Repository:**  Review the code in the `terraform/` and `terraform_modules/` directories to examine the implementation details of the data pipelines and infrastructure-as-code configurations.
+2.  **Review Terraform Configuration:**  Examine the Terraform files in the subdirectories under `terraform_modules/` to understand how the AWS infrastructure was provisioned and configured.
+3.  **Examine Python Code:**  Explore the Python scripts in the `lambdas/` subdirectories to review the data ingestion, ETL logic, and database interactions.
 4.  **Refer to Portfolio Page:** Visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bidatawarehouse/) for a high-level project overview, architecture diagram, and summary of key outcomes.
 
 ## License
