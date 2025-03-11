@@ -29,7 +29,7 @@ The BI platform architecture is designed for efficiency, scalability, and securi
 *   **Infrastructure Automation:** Terraform for declarative infrastructure provisioning and management.
 *   **Logging and Monitoring:** AWS CloudWatch Logs for centralized logging, and prepared framework for real-time monitoring dashboards and alerts.
 
-**See the [Architecture Diagram]([Link to your Portfolio Page's Architecture Diagram Here]) on the portfolio page for a visual representation of the data flow and system components.**
+**See the [Architecture Diagram](https://drive.google.com/file/d/1GtofLovc3-uT8KWqf4fS4bh9F3dktbhJ/view?usp=drive_link) on the portfolio page for a visual representation of the data flow and system components.**
 
 ## Technologies Used
 
