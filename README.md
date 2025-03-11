@@ -161,7 +161,7 @@ Adherence to **HIPAA and SOC regulations** was a primary consideration.  The pro
 
 ## Real-time Monitoring and Alerting (Prepared for Implementation)
 
-While full real-time dashboards and alerts were prepared for future client deployment due to project time constraints, the infrastructure and design for this critical component are in place.  This includes:
+While full real-time dashboards and alerts were only prepared for future client deployment due to project time constraints, the infrastructure and design for this critical component are in place.  This includes:
 
 *   **Designed KPI Dashboards:** Specifications for real-time dashboards visualizing key performance indicators and system health metrics.
 *   **Automated Alerting Framework:**  Configuration prepared for automated alerts to trigger notifications for critical events, enabling rapid incident response.
