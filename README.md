@@ -48,6 +48,9 @@ Here's the directory structure with comments aligned in the same column:
 ```bash
 .
 ├── README.md                                      # Main documentation for the project
+├── .github                                        # GitHub Actions configuration directory
+│         └── workflows                            # Workflows directory
+│             └── lambda-layer.tf                  # Build Lambda layer workflow
 ├── terraform                                      # IaC configuration directory
 │         └── itc-beta                             # Beta environment configuration
 │             ├── README.md                        # Beta environment documentation
