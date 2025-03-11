@@ -1,6 +1,6 @@
 # Efficiency-Driven Data Warehouse for Business Intelligence (BI) Platform
 
-[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)  [![Portfolio Page](https://img.shields.io/badge/Portfolio-Project%20Page-brightgreen)](https://j-r-manalo.github.io/portfolio/bidatawarehouse/)
+[![License](https://img.shields.io/badge/License-MIT-blue.svg)](https://mit-license.org/)  [![Portfolio Page](https://img.shields.io/badge/Portfolio-Project%20Page-brightgreen)](https://j-r-manalo.github.io/portfolio/bi_datawarehouse/)
 
 ## Overview
 
@@ -17,7 +17,7 @@ This repository showcases the implementation of:
 *   **Comprehensive Logging and Monitoring:**  Centralized logging and monitoring implemented using AWS CloudWatch Logs for data pipelines and the data warehouse, providing audit trails and enabling proactive issue detection.
 *   **Prepared Real-time Monitoring and Alerting Framework:**  Design and infrastructure setup for real-time dashboards and automated alerts (ready for client-side implementation).
 
-**For a high-level overview and project context, please visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bidatawarehouse/).**
+**For a high-level overview and project context, please visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bi_datawarehouse/).**
 
 ## Architecture
 The BI platform architecture is designed for efficiency, scalability, and security, leveraging AWS cloud services.  Key architectural components include:
@@ -173,7 +173,7 @@ To explore this project:
 1.  **Browse the Repository:**  Review the code in the `terraform/` and `terraform_modules/` directories to examine the implementation details of the data pipelines and infrastructure-as-code configurations.
 2.  **Review Terraform Configuration:**  Examine the Terraform files in the subdirectories under `terraform_modules/` to understand how the AWS infrastructure was provisioned and configured.
 3.  **Examine Python Code:**  Explore the Python scripts in the `lambdas/` subdirectories to review the data ingestion, ETL logic, and database interactions.
-4.  **Refer to Portfolio Page:** Visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bidatawarehouse/) for a high-level project overview, architecture diagram, and summary of key outcomes.
+4.  **Refer to Portfolio Page:** Visit the [Project Portfolio Page](https://j-r-manalo.github.io/portfolio/bi_datawarehouse/) for a high-level project overview, architecture diagram, and summary of key outcomes.
 
 ## License
 
